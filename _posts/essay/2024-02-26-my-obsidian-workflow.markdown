@@ -5,7 +5,7 @@ date: 2024-02-26
 categories: essay
 description: How I use Obsidian to be more thoughtful about my life experiences and learning.
 permalink: my-obsidian-workflow
-image: Obsidian_Graph.jpg
+image:
 image-description: An Obsidian graph.
 ---
 
