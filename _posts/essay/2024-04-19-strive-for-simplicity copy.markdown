@@ -17,7 +17,7 @@ I recently listened to Dharmesh Shah (HubSpots Co-Founder and CTO) on Lenny's po
 
 > "We had a rule in the HubSpot product as the product grew in the early years that every time you added what we thought of as a knob or dial called a feature, you had to take one out somewhere else. This goes to the sort of binary heuristic; it forces you to think about it. The other mistake I think people make in product all the time. We measure the cost of the feature based on the cost of implementation. That's the first order thinking. Second order thinking is the maintenance of that feature. The third order thinking, which is the most nuanced and most important is the other cost that that complexity adds. So when you go from product number one to product two, it's going to cost us X to develop. What now happens when you go from product 1 to product 2, you have added dimensional complexity to your business. What i mean by that, it's not an incremental increase. Every decision you make has to be made to the lens of now we have 2 products. We just hired an engineer, do they work on product number one or number two? Do we spend 5 minutes talking about one or two? Now every chart that you ever had now has to be viewed through the lens of product one and two. And this applies once again every level of abstraction."
 
-I could probably end this essay here, but I'll elaborate a bit more on my solution to the problem - unrelenting simplicity.
+In other words, adopting a mindset of unrelenting simplicity.
 
 Unrelenting simplicity means:
 
