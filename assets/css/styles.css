@@ -438,6 +438,8 @@ nav a {
 
 .home-container .body {
 	margin-block-start: var(--spacing-l);
+	margin-block-end: var(--spacing-xl);
+	padding-block-end: var(--spacing-m);
 	display: flex;
 	flex-direction: column;
 	gap: var(--gutter-m);
