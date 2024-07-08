@@ -8,19 +8,19 @@ function setThemeToggleText(content) {
 }
 
 if (systemInitiatedDark.matches) {
-    setThemeToggleText("Light Mode");
+    setThemeToggleText("Light");
 } else {
-    setThemeToggleText("Dark Mode");
+    setThemeToggleText("Dark");
 }
 
 function prefersColorTest(systemInitiatedDark) {
     if (systemInitiatedDark.matches) {
         document.documentElement.setAttribute('data-theme', 'dark');
-        setThemeToggleText("Light Mode");
+        setThemeToggleText("Light");
         sessionStorage.setItem('theme', '');
     } else {
         document.documentElement.setAttribute('data-theme', 'light');
-        setThemeToggleText("Dark Mode");
+        setThemeToggleText("Dark");
         sessionStorage.setItem('theme', '');
     }
 }
@@ -31,28 +31,28 @@ function modeSwitcher() {
     if (theme === "dark") {
         document.documentElement.setAttribute('data-theme', 'light');
         sessionStorage.setItem('theme', 'light');
-        setThemeToggleText("Dark Mode");
+        setThemeToggleText("Dark");
     } else if (theme === "light") {
         document.documentElement.setAttribute('data-theme', 'dark');
         sessionStorage.setItem('theme', 'dark');
-        setThemeToggleText("Light Mode");
+        setThemeToggleText("Light");
     } else if (systemInitiatedDark.matches) {
         document.documentElement.setAttribute('data-theme', 'light');
         sessionStorage.setItem('theme', 'light');
-        setThemeToggleText("Dark Mode");
+        setThemeToggleText("Dark");
     } else {
         document.documentElement.setAttribute('data-theme', 'dark');
         sessionStorage.setItem('theme', 'dark');
-        setThemeToggleText("Light Mode");
+        setThemeToggleText("Light");
     }
 }
 
 if (theme === "dark") {
     document.documentElement.setAttribute('data-theme', 'dark');
     sessionStorage.setItem('theme', 'dark');
-    setThemeToggleText("Light Mode");
+    setThemeToggleText("Light");
 } else if (theme === "light") {
     document.documentElement.setAttribute('data-theme', 'light');
     sessionStorage.setItem('theme', 'light');
-    setThemeToggleText("Dark Mode");
+    setThemeToggleText("Dark");
 }
