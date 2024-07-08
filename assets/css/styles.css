@@ -497,7 +497,10 @@ nav a {
 
 .post-layout {
 	grid-column: var(--mobile-width);
-	padding-block: var(--spacing-m);
+	padding-block-end: var(--spacing-xl);
+	margin-inline-start: var(--spacing-sm);
+	margin-inline-end: var(--spacing-sm);
+	margin-block-end: var(--spacing-xl);
 }
 
 .post-header {
@@ -580,7 +583,8 @@ nav a {
 
 @media only screen and (min-width: 768px) {
 	
-	.home-container {
+	.home-container ,
+	.post-layout {
 		margin-inline-start: 0;
 		margin-inline-end: 0;
 	}
