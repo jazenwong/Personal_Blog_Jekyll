@@ -105,7 +105,7 @@ src: url("/assets/fonts/untitled-sans-web-medium.woff2") format("woff2");
 	--serif-font: 'Source Serif', serif;
 	--mono-font: 'Source Code Pro', monospace;
 
-	--mobile-width: 2/24;
+	--mobile-width: 1/-1;
 	--desktop-content-width: 4/-1;
 
 	--gutter-xsm: .75rem;
@@ -185,6 +185,9 @@ body {
 	grid-template-rows: min-content;
 	grid-column-gap: var(--gutter-xsm);
 	padding: var(--spacing-l) 0;
+	max-width: 60ch;
+	margin-inline-start: auto;
+	margin-inline-end: auto;
 }
 
 /* Other */
@@ -214,7 +217,7 @@ img {
 
 img[src*='#background'] {
     background-color: var(--nav-link-color);
-	padding: 2px;
+	padding: 1px;
 	box-sizing: border-box;
 }
 
@@ -256,7 +259,7 @@ p {
 	font-weight: 400;
 	margin-block-end: 1rem;
 	line-height: 1.575;
-	letter-spacing: -.01em;
+	letter-spacing: -.015em;
 }
 
 p strong ,
@@ -275,7 +278,7 @@ ul li ,
 li {
 	margin-bottom: 1rem;
 	line-height: 1.575;
-	letter-spacing: -.01em;
+	letter-spacing: -.015em;
 }
 
 blockquote {
@@ -336,6 +339,19 @@ a:active {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	gap: var(--gutter-m);
+	padding: var(--spacing-sm);
+	border-radius: var(--border-radius);
+	position: fixed;
+	bottom: var(--gutter-l);
+	left: var(--spacing-sm);
+	right: var(--spacing-sm);
+	margin: 0 auto;
+	border: 1px solid var(--main-text-color);
+	max-width: 60ch;
+	width: calc(100% - 2 * var(--spacing-sm));
+	box-sizing: border-box;
+	background-color: var(--main-background-color);
 }
 
 .mobile-nav-container nav {
@@ -344,31 +360,61 @@ a:active {
 	position: fixed;
 	top: 0;
 	left: 0;
-	width: 95%;
 	height: 100%;
-	background-color: var(--main-background-color);
+	background-color: rgba(0,0,0,.8);
 	transform: translateX(-100%);
 	transition: transform 0.6s ease-in-out;
 	z-index: 999;
-	padding: var(--spacing-l) var(--spacing-m);
+	padding: var(--spacing-sm);
 	box-sizing: border-box;
-	border-right: 1px solid black;
 }
 
 .mobile-nav-container nav.active {
 	transform: translateX(0);
-	transition: transform 0.6s ease-in-out;
-}
-
-.mobile-nav-container .nav-links-container {
-	display: flex;
-	justify-content: space-between;
-    align-items: center;
 }
 
 .mobile-nav-container .nav-links {
 	display: flex;
 	gap: var(--gutter-sm);
+}
+
+/* Overlay for modal */
+.modal-overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.8);
+	z-index: 1000;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Centered modal content */
+.modal-content {
+	background: var(--main-background-color);
+	border: 1px solid var(--main-text-color);
+	border-radius: var(--border-radius);
+	max-width: 50ch;
+	width: calc(100% - 2 * var(--spacing-sm));
+	margin: var(--spacing-sm);
+	padding: var(--spacing-m);
+	box-sizing: border-box;
+	overflow-y: auto;
+	max-height: 80vh;
+}
+
+.modal-overlay.active {
+	display: flex;
+	flex-direction: column;
+}
+
+.nav-links-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 nav a {
@@ -381,7 +427,8 @@ nav a {
 	grid-column: var(--mobile-width);
 	display: grid;
 	grid-template-rows: min-content;
-	margin-block-start: var(--spacing-l);
+	margin-inline-start: var(--gutter-sm);
+	margin-inline-end: var(--gutter-sm);
 }
 
 .home-container p {
@@ -391,15 +438,15 @@ nav a {
 
 .home-container .body {
 	margin-block-start: var(--spacing-l);
+	display: flex;
+	flex-direction: column;
+	gap: var(--gutter-m);
 }
 
-.home-container ul {
-	margin-block-start: var(--spacing-m);
-}
-
-.home-container ul li {
-	max-width: 70ch;
-	margin-block-end: var(--spacing-m);
+.home-container .body-cell {
+	border: 1px solid var(--main-text-color);
+	border-radius: var(--border-radius);
+	padding: var(--spacing-sm);
 }
 
 .desktop-nav-container {
@@ -411,7 +458,7 @@ nav a {
 	flex-direction: column;
 	justify-content: flex-start;
 	gap: var(--gutter-sm);
-	margin-block-start: var(--spacing-xl);
+	margin-block-start: var(--spacing-l);
 	height: calc(100% - var(--spacing-xl));
 	overflow: scroll;
 }
@@ -533,14 +580,14 @@ nav a {
 
 @media only screen and (min-width: 768px) {
 	
+	.home-container {
+		margin-inline-start: 0;
+		margin-inline-end: 0;
+	}
 
 }
 
 @media only screen and (min-width: 1100px){
-
-.mobile-nav-container nav {
-	width: 70%;
-}
 
 iframe {
 	width: 77ch;
@@ -548,7 +595,7 @@ iframe {
 
 }
 
-@media only screen and (min-width: 1440px){
+/* @media only screen and (min-width: 1440px){
 
 body {
 	grid-column-gap: var(--gutter-sm);
@@ -671,4 +718,4 @@ body {
 	margin-block-start: 0;
 }
 
-}
+} */
