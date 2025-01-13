@@ -7,18 +7,21 @@ description: Collection of essays on business and life.
       <p>Hi, I'm <a href="https://twitter.com/jwazen1" class="instagram">James</a>. Currently working on making global IT logistics as seamless as possible for enterprises. This is my personal blog where I write about the lessons I've learned from business and in life. Thanks for visiting.</p>
     </div>
     <div class="body">
-      <h2>Updates—7/2/24</h2>
+      <h2>Updates—1/12/25</h2>
       <div class="body-cell">
-        <h3>Website Update</h3>
-        <p>Last weekend, I played a few games that were originally designed for mobile viewports and then ported onto the PC. The PC version was exactly the same as the mobile game, just on a desktop, and overall the experience was still pretty good. Whereas if you designed for PC first and then ported that experience to a mobile device, the space constraints would render the layout unusable. Hence why "mobile first," is a thing. But it made me wonder, maybe "mobile exclusively" might be even better than just mobile first. So anyways, I updated this site to be "mobile exclusive" because why not.</p>
+        <h3>Latest Posts</h3>
+        {% for post in site.posts limit: 3 %}
+        {% if post.url %}
+        <div class="{% if page.url == post.url %}current-page{% endif %} article">
+          <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+          <sub>{{ post.date | date: "%-m/%-d/%y" }}</sub>
+        </div>
+        {% endif %}
+      {% endfor %}
       </div>
       <div class="body-cell">
-        <h3>A Random Thought</h3>
-        <p>Leadership is centered around two core activities: figuring out what a team ought to do and setting the pace for everyone on the team.</p>
-      </div>
-      <div class="body-cell">
-        <h3>Latest Work</h3>
-        <p><a href="https://www.fgx.com">The updated FGX website.</a> In the last decade (seven years personally), we've learned a lot about the world of enterprise IT supply-chains. We delivered hardware to the most regulated countries in the world, stood up logistics programs for large vendors and end-users alike, and there's a lot more to come.</p>
+        <h3>Travel</h3>
+        <p>In December 2024, I visited India for the third time. Although I still can't get used to the pollution and chaos of Delhi, I've come around to appreciating its resillience. Visiting the north east hill towns on the other hand, like Darjeeling, Mirik, Bungkulung, etc. was really fun, in part because it's still quite uncommercialized (most tourism is local; there are very few foreign tourists). Which was surprising to me, given that the British used the north east hills as a place to vacation during its imperialist India era. This area is also interesting because you get to experience both Indian and Nepali culture, as it's inhabited by mostly Indian Gorkhas (Nepali Indians). You can also visit Bhutan as it's only a few hours drive from the hills. The downside is that Bhutan charges a hefty tax for foreigners looking to stay there. For example, US passport holders have to pay $200.00 USD / day to stay in Bhutan. This doesn't include accommodation, food, or other expenses. You'd think that they would want to promote tourism, but it turns out the Bhutanese are quite happy the way they are. In 2022, they had the highest GNH (Gross National Happiness) in the world at 0.781. One last fun fact about Bhutan: in the 1970s, the 4th King of Bhutan stated, “Gross National Happiness is more important than Gross Domestic Product.”</p>
       </div>
     </div>
 </section>
