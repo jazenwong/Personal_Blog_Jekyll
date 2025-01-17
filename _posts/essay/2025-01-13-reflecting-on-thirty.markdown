@@ -19,7 +19,7 @@ Reflecting on some of my thoughts on life and business as I hit 30.
 4. Assume that if you're not the person reaching out to keep the relationship alive, it'll die.
 5. Write often. Try to maintain your own personal writing space. Even if I don't feel like blogging, I'll make sure to update my personal [Obsidian](/my-obsidian-workflow).
 6. Reach out to people over the internet. It actually works! I've made friends with people over the internet and gotten responses from "important" people I never thought would respond.
-7. Recognize that there's a space between what you instincitvely feel and what your ultimate reaction is. Separating instinct from reaction is where self awareness begins.
+7. Recognize that there's a space between what you instinctively feel and what your ultimate reaction is. Separating instinct from reaction is where self awareness begins.
 8. You can just... do things. The world is quite "figure outable."
 9. No one likes a person who just pokes holes in things. Be constructive and empower others.
 10. Life becomes a lot less stressful if you practice extreme empathy. It also makes logical sense - if you were in their *exact* shoes, with their upbringing, genes, experiences, you'd definitely act the way they do in any given situation.
